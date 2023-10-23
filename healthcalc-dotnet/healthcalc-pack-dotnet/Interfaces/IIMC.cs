@@ -3,7 +3,7 @@
     public interface IIMC
     {
         public double CalcularIMC(double Peso, double Altura);
-        public double RetornarCAssificacaoIMC(double IMC);
+        public string RetornarClassificacaoIMC(double IMC);
 
     }
 }

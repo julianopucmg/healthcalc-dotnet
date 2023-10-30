@@ -86,6 +86,74 @@ class Program
 }
 ```
 
+# MacroNutrientes
+
+**MacroNutrientes** é uma classe em C# que fornece funcionalidades para calcular a distribuição de macronutrientes com base no objetivo físico selecionado. Essa classe é útil para aplicativos relacionados a nutrição e fitness que requerem o cálculo de proteínas, gorduras e carboidratos com base no objetivo físico do usuário.
+
+## Uso
+
+Para calcular a distribuição de macronutrientes com base no objetivo físico, siga estas etapas:
+
+1. Importe o namespace necessário:
+
+```csharp
+using healthcalc_pack_dotnet
+```
+
+2. Crie uma instância da classe `MacroNutrientes`:
+  
+
+```csharp
+MacroNutrientes calculadora = new MacroNutrientes();
+```
+
+3. Chame o método `CalcularMacronutrientes` com o peso da pessoa (em quilogramas) e o objetivo físico desejado:
+  
+
+```csharp
+double peso = 70.0; // Peso em quilogramas
+ObjetivoFisicoEnum objetivo = ObjetivoFisicoEnum.Cutting; // Substitua pelo objetivo desejado
+
+ResultadoMacroNutrientesModel resultado = calculadora.CalcularMacronutrientes(peso, objetivo);
+```
+
+4. O método retornará um objeto `ResultadoMacroNutrientesModel` com a distribuição de proteínas, gorduras e carboidratos calculada com base no objetivo físico selecionado.
+  
+
+## Objetivos Físicos
+
+A classe `ObjetivoFisicoEnum` é uma enumeração que representa os objetivos físicos possíveis. Você pode escolher entre os seguintes valores:
+
+- `Cutting`: Representa o objetivo de reduzir a gordura corporal.
+- `Bulking`: Representa o objetivo de ganhar massa muscular.
+- `Keep`: Representa o objetivo de manter o peso atual.
+
+## Exemplo
+
+Aqui está um exemplo de como usar a classe `MacroNutrientes` para calcular a distribuição de macronutrientes com base no objetivo físico:
+
+```csharp
+using SeuNamespaceAqui;
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        MacroNutrientes calculadora = new MacroNutrientes();
+        double peso = 70.0; // Peso em quilogramas
+        ObjetivoFisicoEnum objetivo = ObjetivoFisicoEnum.Cutting;
+
+        ResultadoMacroNutrientesModel resultado = calculadora.CalcularMacronutrientes(peso, objetivo);
+
+        Console.WriteLine("Distribuição de Macronutrientes:");
+        Console.WriteLine($"Proteínas: {resultado.Proteinas}g");
+        Console.WriteLine($"Gorduras: {resultado.Gorduras}g");
+        Console.WriteLine($"Carboidratos: {resultado.Carboidratos}g");
+    }
+}
+```
+
 ## Licença
 
 Esta biblioteca é fornecida sob a [Licença MIT](https://chat.openai.com/c/LICENSE).
